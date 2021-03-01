@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+  <div ng-app="" ng-init="cantidad=1;coste=5"> <!-- ng-init inicializa los valores-->
+    <p>Total en euros:{{cantidad * coste}}</p>
+    <p>Total en euros:<span ng-bind="cantidad * coste"></span></p> <!-- lo mismo que la linea de arriba pero usando ng-bind-->
+  </div>
+</body>
+</html>
