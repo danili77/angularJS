@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    {{nombre + " " +apellido}}
+  </div>
+  <script>
+   // Un modulo es un contenedor para las partes de una aplicacion y contenedor de los controladores.Los controladores pertenecen a un modulo
+    var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+      $scope.nombre ="Daniel";
+      $scope.apellido ="Lorenzo";
+    });
+  </script>
+</body>
+</html>
