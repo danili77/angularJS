@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script><!-- vincular a html -->
+  <body>
+    <div ng-app=""> <!--ng-app define una aplicacion angularjs-->
+      <p>Nombre: <input type="text" ng-model="nombre"></p> <!-- ng-model vincula el valor de los controles HTML(entrada,seleccion,area de texto) a los datos de la aplicacion-->
+      <p ng-bind="nombre"></p> <!-- vincula los datos de la aplicacion a la vista html-->
+    </div>
+  </body>
+</html>

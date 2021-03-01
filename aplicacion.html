@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">  <!--ng-controller define el controlador -->
+    Nombre:<input type="text" ng-model="nombre"><br>
+    Apellido:<input type="text" ng-model="apellido"><br><br>
+    Nombre completo: {{nombre+ " " +apellido}}
+  </div>
+  <script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){   <!--controlador-->
+      $scope.nombre = "Daniel";
+      $scope.apellido = "Lorenzo";
+    });
+  </script>
+</body>
+</html>
