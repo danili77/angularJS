@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+  <div ng-app="" ng-init="puntos=[1,15,19,2,40]">
+      <p>El tercer valor del array es {{puntos[2]}}</p>
+      <p>El tercer valor del array es <span ng-bind="puntos[2]"></span></p> <!-- lo mismo pero con ng-bind -->
+  </div>
+</body>
+</html>
