@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+  input.ng-invalid{
+    background-color:lightblue;
+  }
+</style>
+<body>
+  <form ng-app="" name="myForm">
+    Introduce tu nombre:
+    <input name="myName" ng-model="myText" required> <!--ng-model --agrega o elimina el estilo segun su estado del campo del formulario-->
+    <!--Diferentes estados:
+      ng-vacío
+      ng-not-empty
+      ng-tocado
+      ng-intacto
+      ng-valid
+      ng-invalid
+      ng-sucio
+      ng-pendiente
+      ng-prístino-->
+    <p>Rellenar el cuadro es obligatorio no es valido cuando esta vacio.</p>
+  </form>
+</body>
+</html>
