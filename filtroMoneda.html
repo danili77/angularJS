@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="costeCtrl">
+    <h1>Precio:{{precio | currency}}</h1> <!-- el filtro currency formatea el contenido de la variable a la moneda actual -->
+  </div>
+  <script>
+    angular.module('myApp',[]).controller('costeCtrl',
+    function($scope){
+        $scope.precio = 100;
+    });
+  </script>
+</body>
+</html>
