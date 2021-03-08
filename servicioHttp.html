@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>El mensaje de bienvenida de hoy:</p>
+    <h3>{{myBienvenida}}</h3>
+    <p>El servicio $ http solicita una página en el servidor y la respuesta se establece como el valor de la variable "myBienvenida".</p>
+  </div>
+  <script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl', function($scope,$http){
+      $http.get("bienvenida.html").then(function(response){
+        $scope.myBienvenida = response.data;
+      });
+    });
+  </script>
+</body>
+</html>
