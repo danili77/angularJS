@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>la url de esta pagina es :</p>
+    <h3>{{myCabecera}}</h3>
+    <p>Muestra un mensaje nuevo después de dos segundos.</p>
+  </div>
+  <script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl', function($scope,$timeout)
+    {
+      $scope.myCabecera = "¡Hola!";
+      $timeout(function(){
+        $scope.myCabecera="¿Como estas hoy?";
+      },2000);
+    });
+  </script>
+</body>
+</html>
