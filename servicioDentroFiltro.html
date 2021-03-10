@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>Usa un filtro cuando muestre el array [255,251,200]:</p>
+  <ul>
+    <li ng-repeat="x in numeros">{{x | myFormato}}</li>
+  </ul>
+  <p>Este filtro usa un servicio que convierte numeros a hexadecimal.</p>
+  </div>
+  <script>
+    var app = angular.module('myApp',[]);
+    app.service('hexafy',function(){
+      this.myFunc = function(x)
+      {
+        return x.toString(16);
+      }
+    });
+
+    app.filter('myFormato',['hexafy',function(hexafy){
+      return function(x)
+      {
+        return hexafy.myFunc(x);
+      };
+    }]);
+
+    app.controller('myCtrl', function($scope)
+    {
+      $scope.numeros = [255,251,200];
+    });
+  </script>
+</body>
+</html>
