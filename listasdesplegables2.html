@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>Selecciona un coche:</p>
+    <select ng-model="cocheSeleccionado">
+      <option ng-repeat="x in coches" ng-value="{{x}}">{{x.modelo}}</option>
+    </select>
+    <h1>has seleccionado: {{cocheSeleccionado.modelo}} {{cocheSeleccionado.color}}</h1>
+  </div>
+  <script>
+    var app = angular.module('myApp',[]).controller('myCtrl',function($scope){
+      $scope.coches = [
+        {modelo : "Ford Mustang", color : "rojo"},
+        {modelo : "Fiat 500", color : "blanco"},
+        {modelo : "Volvo XC90", color : "negro"}
+      ];
+    });
+  </script>
+  <p>Cuando usa la directiva ng-repeat para crear listas desplegables, el valor seleccionado debe ser una cadena.</p>
+</body>
+</html>
