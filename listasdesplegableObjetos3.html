@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>Selecciona un coche:</p>
+    <select ng-model="cocheSeleccionado" ng-options="y.marca for (x,y) in coches"></select>
+    <h1>has seleccionado:{{cocheSeleccionado.marca}}</h1>
+    <h2>Modelo:{{cocheSeleccionado.modelo}}</h2>
+    <h3>Color:{{cocheSeleccionado.color}}</h3>
+  </div>
+  <script>
+    var app = angular.module('myApp',[]).controller('myCtrl',function($scope){
+      $scope.coches = {
+        coche1 : {marca : "Ford", modelo : "Mustang", color : "rojo"},
+        coche2 : {marca : "Fiat", modelo : "500", color : "blanco"},
+        coche3 : {marca : "Volvo", modelo : "XC90", color : "negro"}
+      }
+    });
+  </script>
+</body>
+</html>
