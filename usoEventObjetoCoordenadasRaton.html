@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h1 ng-mousemove="myFunc($event)"> raton sobre mi</h1>
+    <p>Coordenadas: {{x+' , '+ y}}</p>
+
+  </div>
+  <script>
+    var app = angular.module('myApp',[]).controller('myCtrl',function($scope){
+      $scope.showMe = false;
+      $scope.myFunc = function(myE){
+        $scope.x = myE.clientX; <!--El $event objeto contiene el objeto de evento del navegador-->
+        $scope.y = myE.clientY;
+      }
+    });
+  </script>
+</body>
+</html>
