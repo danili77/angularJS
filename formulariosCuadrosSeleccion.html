@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+    <form>
+      Selecciona un tema:
+      <select ng-model="var">
+        <option value=""></option>
+        <option value="perros">Perros</option>
+        <option value="tutos">Tutoriales</option>
+        <option value="coches">Coches</option>
+      </select>
+    </form>
+    <div ng-switch="var">
+      <div ng-switch-when="perros">
+        <h1>Perros</h1>
+        <p>Bienvenido al mundo de los perros</p>
+      </div>
+      <div ng-switch-when="tutos">
+        <h1>Tutoriales</h1>
+        <p>Aprende de ejemplos.</p>
+      </div>
+      <div ng-switch-when="coches">
+        <h1>Coches</h1>
+        <p>Lee sobre coches.</p>
+      </div>
+  </div>
+  <p>la directiva ng-switch oculta y muestra secciones HTML dependiendo de los radio button</p>
+</body>
+</html>

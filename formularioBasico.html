@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="formCtrl">
+    <form novalidate>
+      Nombre:<br><input type="text" ng-model="user.nombre"><br>
+      Apellido:<br><input type="text" ng-model="user.apellido"><br><br>
+      <button ng-click="reset()">RESET</button>
+      <p>form = {{user}}</p>
+      <p>master = {{master}}</p>
+    </form>
+  </div>
+  <script>
+    var app = angular.module('myApp',[]).controller('formCtrl',function($scope){
+        $scope.master = {nombre:"Dani",apellido:"Lorenzo"};
+        $scope.reset = function(){
+          $scope.user = angular.copy($scope.master);
+        };
+        $scope.reset();
+    });
+  </script>
+</body>
+</html>

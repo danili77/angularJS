@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div ng-app="">
+    <form>
+      Pulsa para mostrar la cabecera:
+      <input type="checkbox" ng-model="var">
+      <h1 ng-show="var">Cabecera</h1>
+      <p>El atributo ng-show de la cabecera se establecera a true cuando el checkbox se pulse </p>
+    </form>
+  </div>
+</body>
+</html>
