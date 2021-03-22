@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app ="">
+  <p>deja el primer campo vacio:</p>
+  <form name="miForm">
+    <p>Nombre:
+    <input name="miNombre" ng-model="miNombre" required>
+    <span ng-show="miForm.miNombre.$touched && miForm.miNombre.$invalid">El nombre es obligatorio</span>
+    </p>
+    <p>Dirección:
+    <input name="direccion" ng-model="miDireccion" required>
+    </p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+  input.ng-invalid
+  {
+    background-color: red;
+  }
+
+  input.ng-valid
+  {
+    background-color: lightgreen;
+  }
+</style>
+<body ng-app ="">
+  <p>Escribe en el input:</p>
+  <form name="miForm">
+    <p>Nombre:
+      <input name="miNombre" ng-model="miNombre" required>
+    </p>
+  </form>
+</body>
+</html>
