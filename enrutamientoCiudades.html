@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<body ng-app="myApp">
+  <p><a href="#/!">Principal</a></p>
+  <a href="#!londres">Ciudad 1</a>
+  <a href="#!paris">Ciudad 2</a>
+  <p>Clicka los enlaces para leer sobra Londres y Paris</p>
+  <div ng-view></div> <!--contenedor contenido enrutado-->
+  <script>
+    var app = angular.module("myApp",["ngRoute"]);
+    app.config(function($routeProvider){
+      $routeProvider
+      .when("/",
+      {
+        templateUrl:"principal.htm",
+      })
+      .when("/londres",{
+        templateUrl:"londres.htm",
+        controller:"londresCtrl"
+      })
+      .when("/paris",{
+        templateUrl:"paris.htm",
+        controller:"parisCtrl"
+      });
+    });
+    app.controller("londresCtrl",function($scope){
+      $scope.msg = "Amo Londres";
+    });
+
+    app.controller("parisCtrl",function($scope){
+      $scope.msg = "Amo Paris";
+    });
+  </script>
+</body>
+</html>
